@@ -26,7 +26,7 @@ const AddItemPage = () => {
             
             <div className="w-[50%] mx-auto border border-gray-300 rounded py-14 px-10 bg-gray-800 text-white rounded-3xl">
                 
-                <div className="grid grid-cols-6 gap-4 items-end">
+                <div className="grid grid-cols-2 md:grid-cols-6 gap-4 items-end">
                     <div className="col-span-1">
                         <label className="block"> Tipo de Item </label>
                         <select className="w-full border border-gray-300 rounded p-2 text-black" onChange={(e) => setItemType(e.target.value)}>
@@ -83,22 +83,22 @@ const AddItemPage = () => {
                 <h2 className="pt-14 text-xl text-center font-semibold">Lista de items a serem adicionados:</h2>
 
                 {itemList.length >= 1 && 
-                    <div className="grid grid-cols-4 items-center border-b pb-1 mb-4 pt-16 text-lg font-semibold">
+                    <div className="grid grid-cols-1 md:grid-cols-4 items-center border-b pb-1 mb-4 pt-16 text-lg font-semibold">
                         <p>Tipo</p>
                         <p>Item</p>
                         <p>Quantidade</p>
-                        <p className="text-end">Cancelar</p>
+                        <p className="md:text-end">Cancelar</p>
                     </div> 
                 } 
 
                 <div>
 
                     {itemList.length >= 1 && itemList.map(item => (
-                        <div key={item.id} className="grid grid-cols-4 items-center border-b py-1 text-lg">
+                        <div key={item.id} className="grid grid-cols-1 md:grid-cols-4 items-center border-b py-1 text-lg">
                             <span>{item.type}</span>
                             <span>{item.name}</span>
                             <span>{item.quantity} unidades</span>
-                            <button className="text-sm text-red-500 hover:text-red-200 pl-14 text-end" onClick={() => rmItem(item.id)}>Remover</button>
+                            <button className="text-sm text-red-500 hover:text-red-200 text-start md:text-end" onClick={() => rmItem(item.id)}>Remover</button>
                         </div>
                     ))}
 
