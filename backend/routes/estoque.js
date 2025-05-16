@@ -27,7 +27,11 @@ let estoque = [
     { id: 20, name: 'Etiqueta Bag Ultrassom', quantity: 125, logo: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/de361d21-73c5-491c-8db9-749cad3318ce.bf8ffebc087c22a204eb9142f33a460a.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff' },
     { id: 21, name: 'Etiqueta Bag Eletrocardiograma', quantity: 178, logo: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/de361d21-73c5-491c-8db9-749cad3318ce.bf8ffebc087c22a204eb9142f33a460a.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff' },
     { id: 22, name: 'Etiqueta Bag Meios de Contato', quantity: 254, logo: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/de361d21-73c5-491c-8db9-749cad3318ce.bf8ffebc087c22a204eb9142f33a460a.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff' },
-];
+    { id: 23, name: 'Etiqueta 500 Ultrassom', quantity: 100, logo: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/de361d21-73c5-491c-8db9-749cad3318ce.bf8ffebc087c22a204eb9142f33a460a.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff' },
+    { id: 24, name: 'Etiqueta 500 Eletrocardiograma', quantity: 100, logo: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/de361d21-73c5-491c-8db9-749cad3318ce.bf8ffebc087c22a204eb9142f33a460a.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff' },
+    { id: 25, name: 'Etiqueta 500 Meios de Contato', quantity: 100, logo: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/de361d21-73c5-491c-8db9-749cad3318ce.bf8ffebc087c22a204eb9142f33a460a.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff' },
+
+  ];
 
 router.get('/', (req, res) => {
   res.json(estoque);
@@ -42,27 +46,20 @@ router.get('/:id', (req, res) => {
   res.json(item);
 });
 
-router.post('/add', (req, res) => {
-  const { name, quantity } = req.body;
-  const newItem = {
-    id: estoque.length + 1,
-    name,
-    quantity: parseInt(quantity)
-  };
-  estoque.push(newItem);
-  res.status(201).json(newItem);
-});
-
 router.put('/add/:id', (req, res) => {
     const itemId = parseInt(req.params.id);
-    const { quantity } = req.body;
+    const quantityToAdd = parseInt(req.body.quantity);
+
+    if (isNaN(quantityToAdd)) {
+      return res.status(400).json({ error: 'Quantidade inválida' });
+    }
 
     const item = estoque.find(item => item.id === itemId);
     if (!item) {
         return res.status(404).json({ error: 'Item não encontrado' });
     }
 
-    item.quantity = quantity;
+    item.quantity += quantityToAdd;
     res.json(item);
 });
 

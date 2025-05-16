@@ -14,7 +14,7 @@ export const ItemListProvider = ({ children }) => {
             alert("Preencha o formulário corretamente!");
             return
         }
-        setItemList([...itemList, { id: uuidv4(), type: newItem.itemType, name: newItem.item, quantity: newItem.qtd }]);
+        setItemList([...itemList, { id: uuidv4(), type: newItem.itemType, name: newItem.item, quantity: newItem.qtd, number: newItem.number }]);
 
     };
 

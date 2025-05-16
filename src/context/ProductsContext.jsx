@@ -8,11 +8,16 @@ export const ProductsProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3001/estoque")
-        .then((res) => res.json())
-        .then((data) => setProducts(data))
-        .catch((err) => console.error("Erro ao buscar estoque:", err));
+      fetchProducts();
     }, []);
+
+    const fetchProducts = () => {
+        fetch("http://localhost:3001/estoque")
+            .then((res) => res.json())
+            .then((data) => setProducts(data))
+            .catch((err) => console.error("Erro ao buscar estoque:", err));
+    };
+
 
     // Separar produtos em blocos
     const frascos = products.filter(p => p.name.startsWith('Frasco'));
@@ -20,7 +25,7 @@ export const ProductsProvider = ({ children }) => {
     const etiquetas = products.filter(p => p.name.startsWith('Etiqueta'));
 
     return (
-        <ProductsContext.Provider value={{ frascos, caixas, etiquetas }}>
+        <ProductsContext.Provider value={{ frascos, caixas, etiquetas, refreshProducts: fetchProducts  }}>
             {children}
         </ProductsContext.Provider>
     );

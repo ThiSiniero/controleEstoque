@@ -1,8 +1,34 @@
 import React from 'react';
 import { useItems } from "../context/ItemListContext";
+import { useProducts } from "../context/ProductsContext"; 
 
 const ConfirmSend = () => {
-    const { itemList, setListEdit } = useItems();
+    const { itemList, clearItems, setListEdit } = useItems();
+    const { refreshProducts } = useProducts();
+
+    const handleConfirm = async () => {
+        try {
+            for (const item of itemList) {
+                
+                await fetch(`http://localhost:3001/estoque/add/${item.number}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ quantity: item.quantity }),
+                });
+            }
+
+            await refreshProducts(); // atualiza os produtos após adicionar
+
+            alert("Estoque atualizado com sucesso!");
+            clearItems();
+            setListEdit(false);
+        } catch (error) {
+            console.error("Erro ao atualizar estoque:", error);
+            alert("Erro ao atualizar o estoque.");
+        }
+    };
 
     return (
         <div className="fixed inset-0  bg-opacity-50 flex items-center justify-center z-50">
@@ -19,7 +45,7 @@ const ConfirmSend = () => {
                     <button className="px-4 py-2 bg-red-400 rounded hover:bg-red-700 transition" onClick={() => setListEdit(false)} >
                         Cancel
                     </button>
-                    <button className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition" onClick={() => {alert("Items added to stock"); setListEdit(false)} } >
+                    <button className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition" onClick={() => {handleConfirm()} }>
                         Confirm
                     </button>
                 </div>
