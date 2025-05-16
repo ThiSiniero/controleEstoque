@@ -7,6 +7,7 @@ export const useItemList = () => useContext(ItemListContext);
 
 export const ItemListProvider = ({ children }) => {
     const [itemList, setItemList] = useState([]);
+    const [listEdit, setListEdit] = useState(false);
 
     const addItem = (newItem) => {
         if (newItem.qtd === "" || newItem.item === "") {
@@ -25,7 +26,7 @@ export const ItemListProvider = ({ children }) => {
     const clearItems = () => setItemList([]);
 
     return (
-        <ItemListContext.Provider value={{ itemList, addItem, rmItem, clearItems }}>
+        <ItemListContext.Provider value={{ itemList, addItem, rmItem, clearItems, listEdit, setListEdit }}>
             {children}
         </ItemListContext.Provider>
     );

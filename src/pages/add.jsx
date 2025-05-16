@@ -3,9 +3,10 @@ import { useItems } from "../context/ItemListContext";
 
 import FormList from "../components/FormList";
 import ListList from "../components/ListList";
+import ConfirmSend from "../components/ConfirmSend";
 
 const AddItemPage = () => {
-    const { itemList, rmItem } = useItems();
+    const { itemList, clearItems, listEdit, setListEdit } = useItems();
 
 
     return (
@@ -18,18 +19,23 @@ const AddItemPage = () => {
 
                 <h2 className="pt-14 text-xl text-center font-semibold">Lista de items a serem adicionados:</h2>
 
+                {itemList.length === 0 && (
+                    <p className="text-center text-gray-300 pt-20"> Nenhum item adicionado.</p>
+                )}
+
                 <ListList />
+                
 
                 {itemList.length >= 1 ? <div className="flex justify-center">
-                    <button className="bg-green-600 hover:bg-green-700 text-white rounded p-4 font-semibold mt-8" onClick={() => alert(itemList.map(item => item.name + " - " + item.quantity))}>
+                    <button className="bg-red-500 hover:bg-red-700 text-white rounded p-4 font-semibold mt-8 mr-4" onClick={() => clearItems()}>
+                        Cancelar
+                    </button>
+                    <button className="bg-green-600 hover:bg-green-700 text-white rounded p-4 font-semibold mt-8" onClick={() => setListEdit(true)}>
                         Adicionar ao Estoque
                     </button>
                 </div> : null}
 
-
-                {itemList.length === 0 && (
-                    <p className="text-center text-gray-300 pt-20"> Nenhum item adicionado.</p>
-                )}
+                {listEdit && <ConfirmSend />}
 
             </div>
 
