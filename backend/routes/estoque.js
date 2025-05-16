@@ -33,6 +33,15 @@ router.get('/', (req, res) => {
   res.json(estoque);
 });
 
+router.get('/:id', (req, res) => {
+  const itemId = parseInt(req.params.id);
+  const item = estoque.find(item => item.id === itemId);
+  if (!item) {
+    return res.status(404).json({ error: 'Item não encontrado' });
+  }
+  res.json(item);
+});
+
 router.post('/add', (req, res) => {
   const { name, quantity } = req.body;
   const newItem = {
@@ -44,10 +53,17 @@ router.post('/add', (req, res) => {
   res.status(201).json(newItem);
 });
 
-router.delete('/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  estoque = estoque.filter(item => item.id !== id);
-  res.json({ message: 'Item removido' });
+router.put('/add/:id', (req, res) => {
+    const itemId = parseInt(req.params.id);
+    const { quantity } = req.body;
+
+    const item = estoque.find(item => item.id === itemId);
+    if (!item) {
+        return res.status(404).json({ error: 'Item não encontrado' });
+    }
+
+    item.quantity = quantity;
+    res.json(item);
 });
 
 module.exports = router;

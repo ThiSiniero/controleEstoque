@@ -1,21 +1,8 @@
-import React,{ useEffect, useState } from 'react';
+import React from 'react';
+import { useProducts } from "../context/ProductsContext";
 
 const ListProducts = () => {
-
-    // Lista de produtos
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:3001/estoque")
-        .then((res) => res.json())
-        .then((data) => setProducts(data))
-        .catch((err) => console.error("Erro ao buscar estoque:", err));
-    }, []);
-
-    // Separar produtos em blocos
-    const frascos = products.filter(p => p.name.startsWith('Frasco'));
-    const caixas = products.filter(p => p.name.startsWith('Caixa'));
-    const etiquetas = products.filter(p => p.name.startsWith('Etiqueta'));
+    const { frascos, caixas, etiquetas } = useProducts();
 
     return (
         <>
