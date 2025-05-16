@@ -63,4 +63,21 @@ router.put('/add/:id', (req, res) => {
     res.json(item);
 });
 
+router.put('/rm/:id', (req, res) => {
+    const itemId = parseInt(req.params.id);
+    const quantityToRemove = parseInt(req.body.quantity);
+
+    if (isNaN(quantityToRemove)) {
+      return res.status(400).json({ error: 'Quantidade inválida' });
+    }
+
+    const item = estoque.find(item => item.id === itemId);
+    if (!item) {
+        return res.status(404).json({ error: 'Item não encontrado' });
+    }
+
+    item.quantity -= quantityToRemove;
+    res.json(item);
+});
+
 module.exports = router;

@@ -2,15 +2,15 @@ import React from 'react';
 import { useItems } from "../context/ItemListContext";
 import { useProducts } from "../context/ProductsContext"; 
 
-const ConfirmSend = () => {
+const ConfirmRemove = () => {
     const { itemList, clearItems, setListEdit } = useItems();
     const { refreshProducts } = useProducts();
 
     const handleConfirm = async () => {
         try {
             for (const item of itemList) {
-                
-                await fetch(`http://localhost:3001/estoque/add/${item.number}`, {
+
+                await fetch(`http://localhost:3001/estoque/rm/${item.number}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ const ConfirmSend = () => {
                 });
             }
 
-            await refreshProducts(); // atualiza os produtos após adicionar
+            await refreshProducts(); // atualiza os produtos após remover
 
             alert("Estoque atualizado com sucesso!");
             clearItems();
@@ -33,7 +33,7 @@ const ConfirmSend = () => {
     return (
         <div className="fixed inset-0  bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white p-6 rounded-lg min-w-[300px] shadow-lg text-center text-black">
-                <p className="mb-6 text-lg">Tem certeza que deseja <span className="text-green-600 font-bold">ADICIONAR</span> isto?</p>
+                <p className="mb-6 text-lg"> Tem certeza que deseja <span className="text-red-600 font-bold">REMOVER</span> isto?</p>
 
                 <ul className="my-4">
                     {itemList.map(item => (
@@ -54,4 +54,4 @@ const ConfirmSend = () => {
     );
 };
 
-export default ConfirmSend;
+export default ConfirmRemove;
