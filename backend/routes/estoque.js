@@ -3,18 +3,18 @@ const router = express.Router();
 
 let estoque = [
     // Frasco
-    { id: 1, name: 'Frasco 100u', quantity: 3700, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
-    { id: 2, name: 'Frasco 100e', quantity: 2800, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
-    { id: 3, name: 'Frasco 250u', quantity: 1710, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
-    { id: 4, name: 'Frasco 250e', quantity: 2567, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
-    { id: 5, name: 'Frasco 300u', quantity: 1024, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
-    { id: 6, name: 'Frasco 300e', quantity: 1957, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
-    { id: 7, name: 'Frasco 500', quantity: 700, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
-    { id: 8, name: 'Frasco 1000', quantity: 100, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
-    { id: 9, name: 'Frasco 5000ubg', quantity: 3060, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
-    { id: 10, name: 'Frasco 5000ebg', quantity: 2469, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
-    { id: 11, name: 'Frasco 5000uebg', quantity: 6431, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
-    { id: 12, name: 'Frasco 5000b', quantity: 610, logo: 'https://th.bing.com/th/id/OIP.KWiFziF3jqzP0H7I7VBeFgHaHa?w=194&h=195&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3' },
+    { id: 1, name: 'Frasco 100u', quantity: 3700, logo: '100Ultra.png' },
+    { id: 2, name: 'Frasco 100e', quantity: 2800, logo: '100Ecg.jpg' },
+    { id: 3, name: 'Frasco 250u', quantity: 1710, logo: '250Ultra.png' },
+    { id: 4, name: 'Frasco 250e', quantity: 2567, logo: '250Ecg.png' },
+    { id: 5, name: 'Frasco 300u', quantity: 1024, logo: '300Ultra.png' },
+    { id: 6, name: 'Frasco 300e', quantity: 1957, logo: '300Ecg.png' },
+    { id: 7, name: 'Frasco 500', quantity: 700, logo: '500.png' },
+    { id: 8, name: 'Frasco 1000', quantity: 100, logo: '1000.png' },
+    { id: 9, name: 'Frasco 5000ubg', quantity: 3060, logo: 'bagUltra.png' },
+    { id: 10, name: 'Frasco 5000ebg', quantity: 2469, logo: 'bagEcg.png' },
+    { id: 11, name: 'Frasco 5000uebg', quantity: 6431, logo: 'bagMeios.png' },
+    { id: 12, name: 'Frasco 5000b', quantity: 610, logo: 'balde.png' },
     // Caixa
     { id: 13, name: 'Caixa Frascos', quantity: 404, logo: 'https://th.bing.com/th/id/OIP.OSV6pUOkXlb3rBTed9SBbAHaFC?o=7&cb=iwp2rm=3&rs=1&pid=ImgDetMain' },
     { id: 14, name: 'Caixa Bag', quantity: 624, logo: 'https://th.bing.com/th/id/OIP.OSV6pUOkXlb3rBTed9SBbAHaFC?o=7&cb=iwp2rm=3&rs=1&pid=ImgDetMain' },
@@ -30,6 +30,11 @@ let estoque = [
     { id: 23, name: 'Etiqueta 500 Ultrassom', quantity: 100, logo: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/de361d21-73c5-491c-8db9-749cad3318ce.bf8ffebc087c22a204eb9142f33a460a.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff' },
     { id: 24, name: 'Etiqueta 500 Eletrocardiograma', quantity: 100, logo: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/de361d21-73c5-491c-8db9-749cad3318ce.bf8ffebc087c22a204eb9142f33a460a.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff' },
     { id: 25, name: 'Etiqueta 500 Meios de Contato', quantity: 100, logo: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/de361d21-73c5-491c-8db9-749cad3318ce.bf8ffebc087c22a204eb9142f33a460a.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff' },
+    // Tampas
+    { id: 26, name: 'Tampa Abre-Fecha', quantity: 3700, logo: 'tampaAF.png' },
+    { id: 27, name: 'Tampa Bico', quantity: 2800, logo: 'tampaBico.jpg' },
+    { id: 28, name: 'Tampa Bag', quantity: 1710, logo: 'tampaBag.png' },
+    { id: 29, name: 'Tampa Pressao', quantity: 2567, logo: 'tampaPressao.jpg' },
 
   ];
 

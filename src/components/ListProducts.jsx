@@ -2,7 +2,7 @@ import React from 'react';
 import { useProducts } from "../context/ProductsContext";
 
 const ListProducts = () => {
-    const { frascos, caixas, etiquetas } = useProducts();
+    const { frascos, caixas, etiquetas, tampas } = useProducts();
 
     return (
         <>
@@ -11,7 +11,7 @@ const ListProducts = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 px-4 w-[95%] mx-auto">
                     {frascos.map((frasco) => (
                         <div key={frasco.name} className="competence-item flex flex-col bg-gray-200 text-black rounded-lg p-4">
-                            <img src={frasco.logo} alt="" className='h-[200px]'/>
+                            <img src={`/imgs/${frasco.logo}`} className='h-[250px] rounded-3xl'/>
                             <p className="text-lg font-medium">{frasco.name}</p>
                             <p className={`font-bold text-2xl mt-4 ${frasco.quantity < 300 ? 'text-red-600' : ''}`}>{frasco.quantity}</p>
                         </div>
@@ -36,6 +36,17 @@ const ListProducts = () => {
                             <img src={etiqueta.logo} alt="" className='h-[200px]'/>
                             <p className="text-lg font-medium">{etiqueta.name}</p>
                             <p className={`font-bold text-2xl mt-4 ${etiqueta.quantity < 200 ? 'text-red-600' : ''}`}>{etiqueta.quantity}</p>
+                        </div>
+                    ))}
+            </div>
+
+            <p className='text-4xl my-8 font-semibold'>Tampas</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 px-4 w-[95%] mx-auto">
+                    {tampas.map((tampa) => (
+                        <div key={tampa.name} className="competence-item flex flex-col bg-gray-200 text-black rounded-lg p-4 justify-between">
+                            <img src={`/imgs/${tampa.logo}`} className='h-[250px] rounded-3xl'/>
+                            <p className="text-lg font-medium">{tampa.name}</p>
+                            <p className={`font-bold text-2xl mt-4 ${tampa.quantity < 200 ? 'text-red-600' : ''}`}>{tampa.quantity}</p>
                         </div>
                     ))}
             </div>

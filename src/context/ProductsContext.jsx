@@ -23,9 +23,10 @@ export const ProductsProvider = ({ children }) => {
     const frascos = products.filter(p => p.name.startsWith('Frasco'));
     const caixas = products.filter(p => p.name.startsWith('Caixa'));
     const etiquetas = products.filter(p => p.name.startsWith('Etiqueta'));
+    const tampas = products.filter(p => p.name.startsWith('Tampa'));
 
     return (
-        <ProductsContext.Provider value={{ frascos, caixas, etiquetas, refreshProducts: fetchProducts  }}>
+        <ProductsContext.Provider value={{ frascos, caixas, etiquetas, tampas, refreshProducts: fetchProducts  }}>
             {children}
         </ProductsContext.Provider>
     );
