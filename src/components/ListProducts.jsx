@@ -33,7 +33,7 @@ const ListProducts = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 px-4 w-[95%] mx-auto">
                     {etiquetas.map((etiqueta) => (
                         <div key={etiqueta.name} className="competence-item flex flex-col bg-gray-200 text-black rounded-lg p-4 justify-between">
-                            <img src={etiqueta.logo} alt="" className='h-[200px]'/>
+                            <img src={`/imgs/${etiqueta.logo}`} alt="" className='h-[200px]'/>
                             <p className="text-lg font-medium">{etiqueta.name}</p>
                             <p className={`font-bold text-2xl mt-4 ${etiqueta.quantity < 200 ? 'text-red-600' : ''}`}>{etiqueta.quantity}</p>
                         </div>
@@ -41,7 +41,7 @@ const ListProducts = () => {
             </div>
 
             <p className='text-4xl my-8 font-semibold'>Tampas</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 px-4 w-[95%] mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 w-[95%] mx-auto">
                     {tampas.map((tampa) => (
                         <div key={tampa.name} className="competence-item flex flex-col bg-gray-200 text-black rounded-lg p-4 justify-between">
                             <img src={`/imgs/${tampa.logo}`} className='h-[250px] rounded-3xl'/>
