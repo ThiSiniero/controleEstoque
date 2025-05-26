@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const Item = require('./models/Item');
 
-mongoose.connect('mongodb+srv://thiagosiniero:qx6KEB39jXidsT2l@estoque.4dfyyur.mongodb.net/controleEstoque?retryWrites=true&w=majority&appName=estoque')
-.then(async () => {
-  console.log('Conectado ao MongoDB');
+mongoose.connect(process.env.MONGO_URI)
+  .then(async () => {
+    console.log('Conectado ao MongoDB');
 
   // Dados iniciais
   const dados = [

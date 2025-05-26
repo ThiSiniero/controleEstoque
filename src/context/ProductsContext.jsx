@@ -12,7 +12,7 @@ export const ProductsProvider = ({ children }) => {
     }, []);
 
     const fetchProducts = () => {
-        fetch("http://localhost:3001/estoque")
+        fetch("https://controleestoque-33k5.onrender.com/estoque")
             .then((res) => res.json())
             .then((data) => setProducts(data))
             .catch((err) => console.error("Erro ao buscar estoque:", err));

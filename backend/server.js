@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const PORT = 3001; // ou outra porta se preferir
+const PORT = process.env.PORT || 3000;
 
-mongoose.connect('mongodb+srv://thiagosiniero:qx6KEB39jXidsT2l@estoque.4dfyyur.mongodb.net/controleEstoque?retryWrites=true&w=majority&appName=estoque')
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('🟢 Conectado ao MongoDB'))
   .catch((err) => console.error('🔴 Erro ao conectar ao MongoDB:', err));
 
