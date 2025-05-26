@@ -10,7 +10,7 @@ const ConfirmSend = () => {
         try {
             for (const item of itemList) {
                 
-                await fetch(`http://localhost:3001/estoque/add/${item.number}`, {
+                await fetch(`https://controleestoque-33k5.onrender.com/estoque/add/${item.number}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
