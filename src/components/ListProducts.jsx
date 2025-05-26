@@ -41,10 +41,10 @@ const ListProducts = () => {
             </div>
 
             <p className='text-4xl my-8 font-semibold'>Tampas</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 w-[95%] mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 w-[95%] mx-auto pb-12">
                     {tampas.map((tampa) => (
                         <div key={tampa.name} className="competence-item flex flex-col bg-gray-200 text-black rounded-lg p-4 justify-between">
-                            <img src={`/imgs/${tampa.logo}`} className='h-[250px] rounded-3xl'/>
+                            <img src={`/imgs/${tampa.logo}`} className='h-[150px] rounded-3xl'/>
                             <p className="text-lg font-medium">{tampa.name}</p>
                             <p className={`font-bold text-2xl mt-4 ${tampa.quantity < 200 ? 'text-red-600' : ''}`}>{tampa.quantity}</p>
                         </div>

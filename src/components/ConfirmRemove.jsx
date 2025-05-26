@@ -10,7 +10,7 @@ const ConfirmRemove = () => {
         try {
             for (const item of itemList) {
 
-                await fetch(`http://localhost:3001/estoque/rm/${item.number}`, {
+                await fetch(`https://controleestoque-33k5.onrender.com/estoque/rm/${item.number}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

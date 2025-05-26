@@ -56,10 +56,10 @@ const AddList = () => {
                         <option value="frasco300e" id="68349cc4a5dac4c6638972a7">Frasco 300g Eletrocardiograma</option>
                         <option value="frasco500" id="68349cc4a5dac4c6638972a8">Frasco 500g </option>
                         <option value="frasco1000" id="68349cc4a5dac4c6638972a9">Frasco 1000g </option>
-                        <option value="frascou5000ubg" id="68349cc4a5dac4c6638972aa">Frasco Bag Ultrassom</option>
-                        <option value="frascou5000ebg" id="68349cc4a5dac4c6638972ab">Frasco Bag Eletrocardiograma</option>
-                        <option value="frascou5000uebg" id="68349cc4a5dac4c6638972ac">Frasco Bag Meios de Contato</option>
-                        <option value="frascou5000b" id="68349cc4a5dac4c6638972ad">Frasco Balde</option>
+                        <option value="frascou5000ubg" id="68349cc4a5dac4c6638972aa">Bag Ultrassom</option>
+                        <option value="frascou5000ebg" id="68349cc4a5dac4c6638972ab">Bag Eletrocardiograma</option>
+                        <option value="frascou5000uebg" id="68349cc4a5dac4c6638972ac">Bag Meios de Contato</option>
+                        <option value="frascou5000b" id="68349cc4a5dac4c6638972ad">Balde</option>
                     </>
                     }
 
