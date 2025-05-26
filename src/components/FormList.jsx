@@ -7,7 +7,7 @@ const AddList = () => {
     const [qtd, setQtd] = useState("");
     const [item, setItem] = useState("frasco100u");
     const [itemType, setItemType] = useState("frasco");
-    const [number, setNumber] = useState("683486fab166b69fb791b25d");
+    const [number, setNumber] = useState("68349cc4a5dac4c6638972a2");
 
     const handleItemChange = (e) => {
         const newType = e.target.value;
@@ -16,16 +16,16 @@ const AddList = () => {
         // Resetar item e número com os primeiros valores válidos do novo tipo
         if (newType === "frasco") {
             setItem("frasco100u");
-            setNumber("683486fab166b69fb791b25d");
+            setNumber("68349cc4a5dac4c6638972a2");
         } else if (newType === "caixa") {
             setItem("caixa1");
-            setNumber("683486fab166b69fb791b269");
+            setNumber("68349cc4a5dac4c6638972ae");
         } else if (newType === "estiqueta") {
             setItem("etqBagU");
-            setNumber("683486fab166b69fb791b26d");
+            setNumber("68349cc4a5dac4c6638972b5");
         } else if (newType === "tampa") {
             setItem("tampa1");
-            setNumber("683486fab166b69fb791b276");
+            setNumber("68349cc4a5dac4c6638972bb");
         }
     }
 
@@ -48,45 +48,45 @@ const AddList = () => {
                 <select className="w-full border border-gray-300 rounded p-2 text-black" onChange={(e) => { setItem(e.target.value); setNumber(e.target.selectedOptions[0].id) }}>
 
                     {itemType === "frasco" && <>
-                        <option value="frasco100u" id="683486fab166b69fb791b25d">Frasco 100g Ultrasom</option>
-                        <option value="frasco100e" id="683486fab166b69fb791b25e">Frasco 100g Eletrocardiograma</option>
-                        <option value="frasco250u" id="683486fab166b69fb791b25f">Frasco 250g Ultrasom</option>
-                        <option value="frasco250e" id="683486fab166b69fb791b260">Frasco 250g Eletrocardiograma</option>
-                        <option value="frasco300u" id="683486fab166b69fb791b261">Frasco 300g Ultrasom</option>
-                        <option value="frasco300e" id="683486fab166b69fb791b262">Frasco 300g Eletrocardiograma</option>
-                        <option value="frasco500" id="683486fab166b69fb791b263">Frasco 500g </option>
-                        <option value="frasco1000" id="683486fab166b69fb791b264">Frasco 1000g </option>
-                        <option value="frascou5000ubg" id="683486fab166b69fb791b265">Frasco Bag Ultrassom</option>
-                        <option value="frascou5000ebg" id="683486fab166b69fb791b266">Frasco Bag Eletrocardiograma</option>
-                        <option value="frascou5000uebg" id="683486fab166b69fb791b267">Frasco Bag Meios de Contato</option>
-                        <option value="frascou5000b" id="683486fab166b69fb791b268">Frasco Balde</option>
+                        <option value="frasco100u" id="68349cc4a5dac4c6638972a2">Frasco 100g Ultrasom</option>
+                        <option value="frasco100e" id="68349cc4a5dac4c6638972a3">Frasco 100g Eletrocardiograma</option>
+                        <option value="frasco250u" id="68349cc4a5dac4c6638972a4">Frasco 250g Ultrasom</option>
+                        <option value="frasco250e" id="68349cc4a5dac4c6638972a5">Frasco 250g Eletrocardiograma</option>
+                        <option value="frasco300u" id="68349cc4a5dac4c6638972a6">Frasco 300g Ultrasom</option>
+                        <option value="frasco300e" id="68349cc4a5dac4c6638972a7">Frasco 300g Eletrocardiograma</option>
+                        <option value="frasco500" id="68349cc4a5dac4c6638972a8">Frasco 500g </option>
+                        <option value="frasco1000" id="68349cc4a5dac4c6638972a9">Frasco 1000g </option>
+                        <option value="frascou5000ubg" id="68349cc4a5dac4c6638972aa">Frasco Bag Ultrassom</option>
+                        <option value="frascou5000ebg" id="68349cc4a5dac4c6638972ab">Frasco Bag Eletrocardiograma</option>
+                        <option value="frascou5000uebg" id="68349cc4a5dac4c6638972ac">Frasco Bag Meios de Contato</option>
+                        <option value="frascou5000b" id="68349cc4a5dac4c6638972ad">Frasco Balde</option>
                     </>
                     }
 
                     {itemType === "caixa" && <>
-                        <option value="caixa1" id="683486fab166b69fb791b269">Caixa Frasco</option>
-                        <option value="caixa2" id="683486fab166b69fb791b26a">Caixa Mil</option>
-                        <option value="caixa3" id="683486fab166b69fb791b26b">Caixa Bag</option>
-                        <option value="caixa4" id="683486fab166b69fb791b26c">Caixa Cem</option>
+                        <option value="caixa1" id="68349cc4a5dac4c6638972ae">Caixa Frasco</option>
+                        <option value="caixa2" id="68349cc4a5dac4c6638972b0">Caixa Mil</option>
+                        <option value="caixa3" id="68349cc4a5dac4c6638972af">Caixa Bag</option>
+                        <option value="caixa4" id="68349cc4a5dac4c6638972b1">Caixa Cem</option>
                     </>}
 
                     {itemType === "estiqueta" && <>
-                        <option value="etqBagU" id="683486fab166b69fb791b26d">Bag Ultrassom</option>
-                        <option value="etqBagE" id="683486fab166b69fb791b26e">Bag Eletrocardiograma</option>
-                        <option value="etqBagUE" id="683486fab166b69fb791b26f">Bag Meios de Contato</option>
-                        <option value="etqMilU" id="683486fab166b69fb791b270">1000 Ultrassom</option>
-                        <option value="etqMilE" id="683486fab166b69fb791b271">1000 Eletrocardiograma</option>
-                        <option value="etqMilUE" id="683486fab166b69fb791b272">1000 Meios de Contato</option>
-                        <option value="etq500U" id="683486fab166b69fb791b273">500 Ultrassom</option>
-                        <option value="etq500E" id="683486fab166b69fb791b274">500 Eletrocardiograma</option>
-                        <option value="etq500UE" id="683486fab166b69fb791b275">500 Meios de Contato</option>
+                        <option value="etqBagU" id="68349cc4a5dac4c6638972b5">Bag Ultrassom</option>
+                        <option value="etqBagE" id="68349cc4a5dac4c6638972b6">Bag Eletrocardiograma</option>
+                        <option value="etqBagUE" id="68349cc4a5dac4c6638972b7">Bag Meios de Contato</option>
+                        <option value="etqMilU" id="68349cc4a5dac4c6638972b2">1000 Ultrassom</option>
+                        <option value="etqMilE" id="68349cc4a5dac4c6638972b3">1000 Eletrocardiograma</option>
+                        <option value="etqMilUE" id="68349cc4a5dac4c6638972b4">1000 Meios de Contato</option>
+                        <option value="etq500U" id="68349cc4a5dac4c6638972b8">500 Ultrassom</option>
+                        <option value="etq500E" id="68349cc4a5dac4c6638972b9">500 Eletrocardiograma</option>
+                        <option value="etq500UE" id="68349cc4a5dac4c6638972ba">500 Meios de Contato</option>
                     </>}
 
                     {itemType === "tampa" && <>
-                        <option value="tampaAF" id="683486fab166b69fb791b276">Tampa Abre-Fecha</option>
-                        <option value="tampaBico" id="683486fab166b69fb791b277">Tampa Bico</option>
-                        <option value="tampaBag" id="683486fab166b69fb791b278">Tampa Bag</option>
-                        <option value="tampaPressao" id="683486fab166b69fb791b279">Tampa Pressão</option>
+                        <option value="tampaAF" id="68349cc4a5dac4c6638972bb">Tampa Abre-Fecha</option>
+                        <option value="tampaBico" id="68349cc4a5dac4c6638972bc">Tampa Bico</option>
+                        <option value="tampaBag" id="68349cc4a5dac4c6638972bd">Tampa Bag</option>
+                        <option value="tampaPressao" id="68349cc4a5dac4c6638972be">Tampa Pressão</option>
                     </>}
 
                 </select>

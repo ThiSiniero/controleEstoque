@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
 const Item = require('./models/Item');
 
-mongoose.connect('mongodb://localhost:27017/estoque', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect('mongodb+srv://thiagosiniero:qx6KEB39jXidsT2l@estoque.4dfyyur.mongodb.net/controleEstoque?retryWrites=true&w=majority&appName=estoque')
 .then(async () => {
   console.log('Conectado ao MongoDB');
 

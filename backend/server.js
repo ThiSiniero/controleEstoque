@@ -5,13 +5,9 @@ const cors = require('cors');
 const app = express();
 const PORT = 3001; // ou outra porta se preferir
 
-mongoose.connect('mongodb://localhost:27017/estoque', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('🟢 Conectado ao MongoDB'))
-.catch((err) => console.error('🔴 Erro ao conectar ao MongoDB:', err));
-
+mongoose.connect('mongodb+srv://thiagosiniero:qx6KEB39jXidsT2l@estoque.4dfyyur.mongodb.net/controleEstoque?retryWrites=true&w=majority&appName=estoque')
+  .then(() => console.log('🟢 Conectado ao MongoDB'))
+  .catch((err) => console.error('🔴 Erro ao conectar ao MongoDB:', err));
 
 // Middleware
 app.use(cors());
