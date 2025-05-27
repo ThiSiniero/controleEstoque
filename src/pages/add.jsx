@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useItems } from "../context/ItemListContext";
 
 import FormList from "../components/FormList";
-import ListList from "../components/ListList";
+import ListList from "../components/ItemList";
 import ConfirmSend from "../components/ConfirmSend";
 
 const AddItemPage = () => {
@@ -15,7 +15,7 @@ const AddItemPage = () => {
 
             <div className="w-[50%] mx-auto border border-gray-300 rounded py-14 px-10 bg-gray-800 text-white rounded-3xl">
 
-                <FormList />
+                <FormList action="add" />
 
                 <h2 className="pt-14 text-xl text-center font-semibold">Lista de items a serem adicionados:</h2>
 

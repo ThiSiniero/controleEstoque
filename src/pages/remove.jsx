@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useItems } from "../context/ItemListContext";
 
-import FromList from "../components/FormList";
-import ListList from "../components/ListList";
+import FormList from "../components/FormList";
+import ListList from "../components/ItemList";
 import ConfirmRemove from "../components/ConfirmRemove";
 
 const AddItemPage = () => {
@@ -14,7 +14,7 @@ const AddItemPage = () => {
 
             <div className="w-[50%] mx-auto border border-gray-300 rounded py-14 px-10 bg-gray-800 text-white rounded-3xl">
 
-                <FromList />
+                <FormList action="remove" />
 
                 <h2 className="pt-14 text-xl text-center font-semibold">Lista de items a serem removidos:</h2>
 
