@@ -7,13 +7,13 @@ const Navbar = () => {
             <div className="font-bold text-2xl">Controle de Estoque</div>
             <ul className="flex md:gap-2 list-none m-0 p-0 md:pr-32">
                 <li>
-                    <Link to="/" className="text-lg font-bold border border-black px-4 py-2 rounded-lg hover:text-gray-400 hover:border-gray-400">Estoque</Link>
+                    <Link to="/" className="text-lg font-bold border border-black px-2 md:px-4 py-2 rounded-lg hover:text-gray-400 hover:border-gray-400">Estoque</Link>
                 </li>
                 <li>
-                    <Link to="/add" className="text-lg font-bold border border-black px-4 py-2 rounded-lg hover:text-green-600 hover:border-green-600">Adicionar</Link>
+                    <Link to="/add" className="text-lg font-bold border border-black px-2 md:px-4 py-2 rounded-lg hover:text-green-600 hover:border-green-600">Adicionar</Link>
                 </li>
                 <li>
-                    <Link to="/rm" className="text-lg font-bold border border-black px-4 py-2 rounded-lg hover:text-red-400 hover:border-red-400">Remover</Link>
+                    <Link to="/rm" className="text-lg font-bold border border-black px-2  md:px-4 py-2 rounded-lg hover:text-red-400 hover:border-red-400">Remover</Link>
                 </li>
             </ul>
         </nav>
