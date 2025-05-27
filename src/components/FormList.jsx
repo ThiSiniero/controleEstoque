@@ -144,7 +144,7 @@ const FormList = ({ action }) => {
                 <input type="number" min="1" className="w-full border border-gray-300 rounded p-2 text-black" placeholder="ex: 50" onChange={(e) => setQtd(e.target.value)} />
             </div>
 
-            <button type="button" className="bg-blue-600 hover:bg-blue-700 text-white rounded p-2 font-semibold col-span-2" onClick={() => action == "add" ? addItem({ itemType, item, qtd, number }) : addSimilarItem({ itemType, item, qtd, number })}>
+            <button type="button" className="bg-blue-600 hover:bg-blue-700 text-white rounded p-2 font-semibold col-span-2" onClick={() => action == "add" ? addItem({ qtd, number }) : addSimilarItem({ qtd, number })}>
                 Adicionar à Lista
             </button>
         </div>
